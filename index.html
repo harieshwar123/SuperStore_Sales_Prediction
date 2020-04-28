@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+    
+<style>
+div.a {
+  font-size: 30px;
+}h2{
+  background-color: #121212;
+  color: #70dbdb;
+}
+</style>
+
+   </head>
+   <body>
+      <div style="background-color:#34495e">
+         <div>
+            <h1 style="color:#08d192">Predict Sales Analysis</h1>
+            <div>
+               <table>
+                  <form action ="{{ url_for('predict')}}" method="post" align="center" >
+                     <tr>
+                        <td>
+                          <span style="color:white;font-weight:bold"> Quantity: <input type="text" name="Quantity" required="required"><br></span>
+                          <br>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                          <span style="color:white;font-weight:bold">  Discount:  <input type="text" name="Discount" required="required"><br></span>
+                          <br>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <span style="color:white;font-weight:bold">   Profit:  <input type="text" name="Profit" required="required"><br></span>
+                          <br>
+                        </td>
+                     </tr>
+                     <tr>
+                          <td>
+                           <span style="color:white;font-weight:bold"> Select the segment of the product:</span>
+                          
+                        
+                          <span style="color:yellow;font-weight:bold"> 
+                           <input type="radio" name="segments" id="option1" value="consumer" required="required"> consumer_segment </input>&nbsp;
+                           <input type="radio" name="segments" id="option2" value="corporate" required="required"> corporate_segment </input>&nbsp;
+                           <input type="radio" name="segments" id="option3" value="home_office_segment" required="required"> home_office_segment </input><br> 
+                           </span>
+                           <br>  
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <span style="color:white;font-weight:bold"> Select the region to ship the product:</span>
+                           <span style="color:yellow;font-weight:bold"> 
+                           <input type="radio" name="regions" id="option1" value="central" required="required"> central_region </input>&nbsp;
+                           <input type="radio" name="regions" id="option2" value="east" required="required"> east_region </input>&nbsp;
+                           <input type="radio" name="regions" id="option3" value="south" required="required"> south_region </input>&nbsp;  
+                           <input type="radio" name="regions" id="option4" value="west" required="required"> west_region </input><br>
+                         </span>
+                         <br>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <span style="color:white;font-weight:bold"> Select a shipping mode:</span><br>
+                           <span style="color:yellow;font-weight:bold"> 
+                           <input type="radio" name="shipclass" id="option1" value="first" required="required"> Ship Mode_First Class: </input><br>
+                           <input type="radio" name="shipclass" id="option2" value="sameday" required="required">  Ship Mode_Same Day</input><br>
+                          <input type="radio" name="shipclass" id="option3" value="second" required="required"> Ship Mode_Second Class</input><br>   
+                          <input type="radio" name="shipclass" id="option4" value="standard" required="required"> Ship Mode_Standard Class: </input><br>
+                         </span>
+                         <br>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                            <span style="color:white;font-weight:bold"> Select the category of the product:</span><br>
+                           <span style="color:yellow;font-weight:bold"> 
+                           <input type="radio" name="category" id="option1" value="furniture" required="required">Category_Furniture:</input><br>
+                           <input type="radio" name="category" id="option2" value="office_supplies" required="required"> Category_Office Supplies </input><br>
+                           <input type="radio" name="category" id="option3" value="technology" required="required"> Category_Technology </input><br>   
+                        </span>
+                        <br>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                          <br>
+                           <button type="submit">Predict</button>
+                        </td>
+                     </tr>
+                  </form>
+               </table>
+            </div>
+            
+            <p>
+            <h2 >
+               {{ prediction_text }}  
+            </h2>
+            </p>
+         </div>
+      </div>
+   </body>
+</html>
